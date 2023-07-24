@@ -51,12 +51,12 @@ module.exports = (sequelize) => {
     releaseDate:{
       type:DataTypes.DATEONLY,
       allowNull:false,
-      validate: {
-        isValidDate(value) {
-          if (!(value instanceof Date))
-            throw new Error('Release date must be a valid date');
-        }
-      }
+      // validate: {
+      //   isValidDate(value) {
+      //     if (!(value instanceof Date))
+      //       throw new Error('Release date must be a valid date');
+      //   }
+      // }
     },
     rating:{
       type:DataTypes.DECIMAL(2,1),
@@ -68,7 +68,7 @@ module.exports = (sequelize) => {
     },
     created:{
       type:DataTypes.BOOLEAN,
-      default:true,
+      defaultValue:true,
     }
-  }, {timestamp:false});
+  }, {timestamps:false});
 };
