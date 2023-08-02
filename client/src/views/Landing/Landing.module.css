@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    border:2px solid red;
+}
+.form{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6em;
+    padding-top: 2em;
+    height:20em;
+    width: 15em;
+    background-color: rgba(250,235,215,0.4);
+    border:2px solid blue;
+}
+
+.imagen {
+    border: 2px solid red;
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url('../../images/pcman.jpg');
+    background-repeat: no-repeat;
+}

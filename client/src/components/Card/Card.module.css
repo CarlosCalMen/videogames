@@ -1,0 +1,18 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 180px;
+    height: 260px;
+    border-radius: 15px;
+    background-color: lightslategrey;
+    opacity: 0.8;
+    margin: 0.5px;
+    margin: 1.1em 1em 0em;
+}
+
+.image {
+    width: 124px;
+    height: 124px;
+    margin:auto;
+}

@@ -1,0 +1,26 @@
+.detailContainer{
+    display: flex;
+    justify-content:center;
+
+}
+
+.imageContainer{
+    width: 25em;
+    height: 35em;
+    background-color: blanchedalmond;
+    opacity: 0.8;
+}
+
+.image{
+    width: 24em;
+    height: 30em;
+}
+
+.dataContainer{
+    color:brown;
+    font-size: medium;
+    background-color: blanchedalmond;
+    opacity: 0.8;
+    margin-right: 4em;
+    width: 20em;
+}
