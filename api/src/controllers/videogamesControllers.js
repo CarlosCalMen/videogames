@@ -7,7 +7,7 @@ const {API_KEY} = process.env;
 
 const getBbddVideogames = async () => {
     const videogameList = await Videogame.findAll({
-            attributes:['id','name','image','created'],
+            attributes:['id','name','image','rating','created'],
             include:{
                 model:Genre,
                 as:'genres',
@@ -22,20 +22,25 @@ const getBbddVideogames = async () => {
 };
             
 const getApiVideogames = async () => {
+    const promises = [];
     let videogames = [];
-    for (let i=1; i<6; i++) {
-        const results = (await axios.get(`${URL}?key=${API_KEY}&page=${i}`)).data.results; 
-        const aux= results.map((videogame)=>{
-            return {id:videogame.id,
+    for (let i=1; i<4; i++)
+        promises.push(await axios.get(`${URL}?key=${API_KEY}&page_size=40&page=${i}`));
+    const responses = await Promise.all(promises);
+    responses.forEach((response) =>{
+        const results = response.data.results;
+        videogames=[...videogames,...results.map((videogame) =>{
+            return {
+                id:videogame.id,
                 name:videogame.name,
                 image:videogame.background_image,
+                rating:videogame.rating,
                 genres:videogame.genres.map((genre=>genre.name)),
                 created:false,
-            }
-        });
-    videogames=[...videogames,...aux];
-    };
-    return videogames;
+            };
+        })];
+    });
+    return videogames;    
 };
 
 const getAllVideogames = async () => {
@@ -46,7 +51,7 @@ const getAllVideogames = async () => {
             
 const getBbddVideogamesByName = async (name) => {
     const bbddVideogames = await Videogame.findAll({
-                attributes:['id','name','image','created'],
+                attributes:['id','name','image','rating','created'],
                 where:{
                     name:{[Op.iLike]:`%${name}%`}
                 },
@@ -71,6 +76,7 @@ const getApiVideogamesByName = async (name) =>{
                 id:videogame.id,
                 name:videogame.name,
                 image:videogame.background_image,
+                rating:videogame.rating,
                 genres:videogame.genres.map(genre=>genre.name),
                 created:false,
                 }}));
@@ -119,7 +125,7 @@ const getVideogameById = async(id) => {
           return await (getApiVideogameById(id));
         } 
         catch (error) {
-          throw new Error('Id does not exist');   
+          throw new Error(`Videogame with Id ${id} does not exist`);   
         }
     }    
     else //busca en la BBDD 
@@ -131,14 +137,15 @@ const getVideogameById = async(id) => {
     }
 };    
 
-const createVideogame = async ({name,image,platforms,description,releaseDate,rating,genres})=>{
+const createVideogame = async ({name,image,platforms,description,released,rating,genres})=>{
     const newVideogame = await (Videogame.create({
                             name,
                             image,
                             platforms,
                             description,
-                            releaseDate,
-                            rating,genres,
+                            released,
+                            rating,
+                            genres,
                             }));
     await newVideogame.addGenre(genres);
     return newVideogame;                       
