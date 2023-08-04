@@ -1,9 +1,7 @@
 import axios from 'axios';
 export const GET_ALL_VIDEOGAMES = 'GET_ALL_VIDEOGAMES';
 export const GET_VIDEOGAME_BY_NAME = 'GET_VIDEOGAME_BY_NAME';
-// export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID';
 export const CREATE_VIDEOGAME = 'CREATE_VIDEOGAME';
-// export const GET_VIDEOGAMES_TO_SHOW = 'GET_VIDEOGAMES_TO_SHOW';
 export const GET_GENRES = 'GET_GENRES';
 export const INC_CURRENT_PAGE = 'INC_CURRENT_PAGE';
 export const DEC_CURRENT_PAGE = 'DEC_CURRENT_PAGE';

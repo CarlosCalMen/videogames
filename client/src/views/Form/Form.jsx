@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { initialState,validate,disable } from './Form.Utils.js';
 import {createVideogame,toogleVideogamesUpdated} from '../../redux/actions.js';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const Form = () => {
   const [form,setForm] = useState(initialState('form'));
   const [errors,setErrors] = useState(initialState('errors'));
   const dispatch = useDispatch();
   const genres = useSelector(state =>state.genres);
+  const history = useHistory();
 
   const changeHandler = (event)=>{
     const {name,value,type,checked} = event.target;
@@ -37,6 +39,10 @@ const Form = () => {
     setErrors(initialState('errors'));
     dispatch(toogleVideogamesUpdated()); 
   };
+
+  const closeHandler = ()=>{
+    history.push('/home');
+  };
  
   return (
     <form className={style.formContainer} onSubmit={submitHandler}>
@@ -56,17 +62,19 @@ const Form = () => {
               <input 
                 type='checkbox'
                 name='genres'
+                id={genre.id}
                 value={genre.id}
                 onChange={changeHandler}
                 checked={form.genres.includes(genre.id)}
               />
-            <label>{genre.name}</label>
+            <label htmlFor={genre.id}>{genre.name}</label>
             </div>
           ))}
         </div>
         <label className={style.error}>{errors.genres}</label>
         <br />
         <button type='submit' disabled={disable(errors)}>Submit</button>
+        <button onClick={closeHandler}>Close</button>
     </form>
   );
 };

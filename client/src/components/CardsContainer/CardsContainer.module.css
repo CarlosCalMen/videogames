@@ -1,26 +1,8 @@
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    width: 99vw;
-    height: 80vh;
-    justify-content: center;
-    border-radius: 15px;
-    border: solid 1px black;
-    margin: auto;
-}
-
 .cards{
     display: flex;
     flex-wrap: wrap;
-    width: 99vw;
-    height: 80vh;
-    border-radius: 15px;
-    border: solid 1px black;
-    margin: auto; 
+    width: 98%;
+    height: 100vh;
     justify-content: center;
-
 }
 
-.paginate input{
-    width: fit-content;
-}

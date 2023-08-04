@@ -5,14 +5,14 @@
     width: 180px;
     height: 260px;
     border-radius: 15px;
-    background-color: lightslategrey;
+    background-color:lightsteelblue;
     opacity: 0.8;
     margin: 0.5px;
-    margin: 1.1em 1em 0em;
+    margin: 1em 1em 0em;
 }
 
 .image {
-    width: 124px;
-    height: 124px;
+    width: 100px;
+    height: 100px;
     margin:auto;
 }

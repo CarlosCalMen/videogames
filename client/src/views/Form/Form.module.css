@@ -1,0 +1,29 @@
+.genresContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%; 
+    justify-content: space-around;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formContainer {
+    width: 60%;
+    height: 80%;
+    margin: 1em 20%;
+    padding-bottom: 1em;
+    border: solid 1px black;
+    background-color: antiquewhite;
+    opacity:0.8;
+}
+
+.error{
+    color: red;
+    font-size: smaller;
+}

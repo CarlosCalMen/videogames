@@ -3,7 +3,6 @@ import style from './CardsContainer.module.css';
 
 const CardsContainer = ({videogames}) => {
   return (
-    <div className={style.mainContainer}>
       <div className = {style.cards}>
         {videogames?.map((videogame,index)=>{
           return (
@@ -15,7 +14,6 @@ const CardsContainer = ({videogames}) => {
                     genres = {videogame.genres}
                   />)  
         })}
-      </div>
     </div>
   );
 };

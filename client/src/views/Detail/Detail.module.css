@@ -1,26 +1,62 @@
-.detailContainer{
+.mainContainer{
     display: flex;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
+}
 
+.title{
+    margin-top: 2em;
+    display: inline-block;
+    color:chocolate;
+    background-color: antiquewhite;
+    opacity:0.8;
 }
 
 .imageContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     width: 25em;
-    height: 35em;
+    height: 25em;
     background-color: blanchedalmond;
-    opacity: 0.8;
+    opacity: 0.92;
 }
 
 .image{
-    width: 24em;
-    height: 30em;
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
 }
 
 .dataContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color:brown;
     font-size: medium;
     background-color: blanchedalmond;
-    opacity: 0.8;
-    margin-right: 4em;
-    width: 20em;
+    opacity: 0.9;
+    width: 25em;
+    height: 25em;
+}
+
+.descriptionContainer{
+    background-color: blanchedalmond;
+    color:brown;
+    text-align: justify;  
+    opacity:0.9;
+    width: 25em;
+    height: 25em;
+    overflow: auto; 
+    /* border: 1px solid #ccc; / */
+}
+
+.textArea{
+    background-color: blanchedalmond;
+    color:brown;
+    text-align: justify; 
+    opacity:0.9;
+    width: 100%;
+    height: 100%;
+    resize:none;
 }

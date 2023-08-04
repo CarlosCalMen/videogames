@@ -1,0 +1,44 @@
+.mainContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paginator{
+    display: flex;
+    justify-content: flex-end;
+    height: 1.5em;
+    padding-right: 3em;
+    margin-left: 2em;
+}
+
+.inputPage{
+    width: 1.3em;
+    text-align: center;
+}
+
+.title{
+    display: flex;
+    width: 98%;
+    justify-content: flex-end;
+    align-items: center;
+    color:bisque;
+}
+
+.filterSearchBar{
+    background-color: bisque;
+    border: solid 1px black;
+    width:99.9%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.filters{
+    margin-left: 3em;
+}
+
+.searchBar{
+    margin-right: 2em;
+}

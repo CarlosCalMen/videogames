@@ -1,0 +1,22 @@
+.filtersBar{
+    display: flex;
+    justify-content: space-around;
+    width: 70em;
+    align-items: center;
+}
+
+.filters{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding-right: 4em;
+    align-items: center;
+}
+
+.order{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding-right: 4em;
+    align-items: center;
+}
