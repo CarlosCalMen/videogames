@@ -27,13 +27,6 @@ export const getVideogameByName = (name)=>{
     };
 };
 
-// export const getVideogameById = (id) => {
-//     return async (dispatch)=>{
-//         const videogame = (await axios.get(`http://localhost:3001/${id}`)).data;
-//         dispatch({type:GET_VIDEOGAME_BY_ID, payload:videogame}); 
-//     };
-// };
-
 export const toogleVideogamesUpdated = ()=>{
     return (dispatch)=>{
         dispatch({type:TOOGLE_VIDEOGAMES_UPDATED});
@@ -107,4 +100,4 @@ export const resetCurrentPage= ()=>{
     return (dispatch)=>{
         dispatch({type:RESET_CURRENT_PAGE});
     };
-};    
+};

@@ -23,7 +23,9 @@ const validate = (form,errors,setErrors,property)=>{
         }
         case 'released':{
             const regex = /^(?:(?!0000)(?:[1-9]\d{3}|0[1-9]\d{2}|00[1-9]\d|000[1-9]))-(?:0?[1-9]|1[0-2])-(?:0?[1-9]|[12]\d|3[01])$/
-            if (regex.test(form[property])) return setErrors({...errors,[property]:''});
+            if (regex.test(form[property]) ){
+                if (Date.parse(form[property]) < Date.now())
+                  return setErrors({...errors,[property]:''})};
             return setErrors({...errors,[property]:'Release date must be a valid date in format yyyy-mm-dd'});
         }
         case 'genres':{

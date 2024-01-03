@@ -88,7 +88,7 @@ const rootReducer = (state= initialState,action)=>{
             return {...state,videogamesUpdated:!state.videogamesUpdated};
 
         case ORDER_VIDEOGAMES_BY_PROPERTY:
-            if (state.orderBy ==='none' && state.videogamesBackUp.length===0)
+            if (state.orderBy ==='none' && state.videogamesBackUp.length===0)//save the current order to recover
                 state.videogamesBackUp = [...state.videogamesFiltered];
             let aux=[...state.videogamesFiltered];
             switch (action.payload) {

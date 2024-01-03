@@ -2,12 +2,13 @@ import style from './Card.module.css';
 import {Link} from 'react-router-dom';
 
 // {genres.map((genre,index)=> <p key= {index}>{genre}</p>)}
-const Card = ({id,name,image,genres}) => {
+const Card = ({id,name,image,genres,rating}) => {
   return (
     <div className = {style.card}>
       <img className = {style.image} src={image} alt={name} />
       <Link to={`/detail/${id}`}>{name}</Link>
       <br />
+      <p>{rating}</p>
       <p>Genres: {genres.join(', ')}</p>
     </div>
   );

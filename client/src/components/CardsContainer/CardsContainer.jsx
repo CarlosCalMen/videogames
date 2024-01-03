@@ -12,6 +12,7 @@ const CardsContainer = ({videogames}) => {
                     name = {videogame.name}
                     image = {videogame.image}
                     genres = {videogame.genres}
+                    rating = {videogame.rating}
                   />)  
         })}
     </div>

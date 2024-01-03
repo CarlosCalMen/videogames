@@ -17,7 +17,6 @@ const Filters = () => {
     const handlerChange = (event)=>{
         const filterName = event.target.name;
         const filterValue = event.target.value;
-            console.log('prop '+filterName+' valor '+filterValue)
 
         switch (filterName) {
             case 'source':
