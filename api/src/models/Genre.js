@@ -15,5 +15,5 @@ module.exports = (sequelize)=>{
                 isNull: {msg:'Name could not be null'}
             }
         }
-    },{timestamps:false})
+    },{timestamps:false});
 };
